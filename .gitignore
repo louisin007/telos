@@ -1,0 +1,28 @@
+# --- Project Specific ---
+# Ignore your custom output folder
+output/
+
+# --- Security & Credentials ---
+.env
+*.pem
+*.key
+secrets.json
+auth_token.txt
+
+# --- Python & Environment ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+
+# --- OS Generated Files ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# --- Logs and Databases ---
+*.log
+*.sqlite3

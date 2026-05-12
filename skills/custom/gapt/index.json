@@ -1,0 +1,4425 @@
+{
+  "version": 2,
+  "generated_at": "2026-05-08T10:21:52.506436+00:00",
+  "name": "gapt-test-cases",
+  "description": "GAPT (GenAI Application Penetration Testing) test cases mapped to OWASP LLM Top 10 (2025), OWASP Agentic Top 10 (2026), OWASP MCP Top 10 (2025), MITRE ATLAS, and NIST AI RMF.",
+  "total_skills": 155,
+  "categories": {
+    "chatbot": 45,
+    "agentic": 55,
+    "embedded": 25,
+    "cross-cutting": 5,
+    "mcp": 25
+  },
+  "frameworks_covered": [
+    "OWASP Top 10 for LLM Applications 2025",
+    "OWASP Top 10 for Agentic Applications 2026",
+    "OWASP Top 10 for MCP 2025 (beta)",
+    "MITRE ATLAS",
+    "NIST AI Risk Management Framework"
+  ],
+  "skills": [
+    {
+      "id": "GAPT-001",
+      "name": "testing-direct-prompt-injection-instruction-override",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "prompt-injection",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test direct prompt injection by submitting payloads that explicitly instruct the model to ignore prior instructions, reveal its system prompt, or change persona. Covers the foundational LLM01 attack vector against single-turn chatbots.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-direct-prompt-injection-instruction-override/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-002",
+      "name": "testing-indirect-prompt-injection-via-rag-documents",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "prompt-injection",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Inject malicious instructions into documents that the chatbot retrieves via RAG, then observe whether retrieved content alters model behavior. Validates trust boundaries between retrieved data and instructions.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051.001",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-indirect-prompt-injection-via-rag-documents/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-003",
+      "name": "testing-prompt-injection-via-system-role-impersonation",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "prompt-injection",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether attackers can impersonate the system role within user input to override developer-defined constraints. Common bypass against poorly-delimited system/user role boundaries.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-prompt-injection-via-system-role-impersonation/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-004",
+      "name": "testing-multilingual-prompt-injection-bypass",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "prompt-injection",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Submit injection payloads in multiple languages (including low-resource languages and code-switching) to bypass English-centric safety filters. Tests robustness of guardrails across linguistic contexts.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0054",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-multilingual-prompt-injection-bypass/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-005",
+      "name": "testing-encoded-payload-injection-base64-rot13-leetspeak",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "prompt-injection",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Submit injection payloads obfuscated via Base64, ROT13, leetspeak, hex, or Unicode homoglyphs to evade content filters that operate on plaintext only.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0054",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-encoded-payload-injection-base64-rot13-leetspeak/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-006",
+      "name": "testing-prompt-injection-via-image-multimodal-input",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "prompt-injection",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "For multimodal chatbots, test prompt injection embedded in images (steganography, visible text overlays, adversarial perturbations). Validates whether image inputs are treated with appropriate trust.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0043",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-prompt-injection-via-image-multimodal-input/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-007",
+      "name": "testing-jailbreak-via-roleplay-and-fictional-framing",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "jailbreak",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test classic jailbreak patterns: DAN-style roleplay, fictional/hypothetical framing, grandma prompts, and persona-shift attacks designed to elicit prohibited responses through indirect framing.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0054",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-jailbreak-via-roleplay-and-fictional-framing/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-008",
+      "name": "testing-jailbreak-via-token-smuggling-and-special-characters",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "jailbreak",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Use special tokens, control characters, zero-width spaces, and tokenizer edge cases to smuggle instructions past filters. Covers tokenizer-aware attacks specific to the target model family.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0054",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-jailbreak-via-token-smuggling-and-special-characters/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-009",
+      "name": "testing-prompt-injection-via-conversation-history-poisoning",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "prompt-injection",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi06",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Poison conversation history (assistant turns or memory summaries) such that subsequent turns inherit attacker-controlled context. Tests session-state integrity in multi-turn chatbots.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI06",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-prompt-injection-via-conversation-history-poisoning/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-010",
+      "name": "testing-many-shot-jailbreak-via-context-window-exhaustion",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "jailbreak",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Submit many-shot jailbreak prompts (hundreds of fake Q&A pairs in a single message) to overwhelm safety alignment via in-context learning. Tests context window robustness.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0054",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-many-shot-jailbreak-via-context-window-exhaustion/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-011",
+      "name": "testing-pii-leakage-from-training-data-extraction",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "data-disclosure",
+        "owasp-llm",
+        "llm02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Use training data extraction probes (verbatim memorization queries, divergence attacks) to test whether the model leaks PII or proprietary data from its training corpus.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-pii-leakage-from-training-data-extraction/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-012",
+      "name": "testing-system-prompt-extraction-techniques",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "data-disclosure",
+        "owasp-llm",
+        "llm07",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Attempt to extract the system prompt via repetition tricks, completion attacks, translation requests, and indirect questioning. Covers LLM07 system prompt leakage.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM07",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-system-prompt-extraction-techniques/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-013",
+      "name": "testing-rag-cross-tenant-data-leakage",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "data-disclosure",
+        "owasp-llm",
+        "llm02",
+        "owasp-agentic",
+        "asi06",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "In multi-tenant RAG deployments, test whether vector store queries return documents from other tenants. Validates retrieval-time access controls beyond ingestion-time tagging.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": "ASI06",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-rag-cross-tenant-data-leakage/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-014",
+      "name": "testing-secrets-leakage-via-output-exfiltration",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "data-disclosure",
+        "owasp-llm",
+        "llm02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether secrets, API keys, or credentials embedded in system prompts or RAG context can be exfiltrated via crafted user queries (canary token approach recommended).",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-secrets-leakage-via-output-exfiltration/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-015",
+      "name": "testing-conversation-memory-leakage-across-sessions",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "data-disclosure",
+        "owasp-llm",
+        "llm02",
+        "owasp-agentic",
+        "asi06",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "For chatbots with persistent memory, test whether one user can retrieve another user's stored memory entries through user ID enumeration or memory query manipulation.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": "ASI06",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-conversation-memory-leakage-across-sessions/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-016",
+      "name": "testing-side-channel-disclosure-via-token-timing",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "data-disclosure",
+        "owasp-llm",
+        "llm02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Analyze response token timing and length patterns to infer information about hidden context (system prompt length, retrieval results, internal reasoning).",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-side-channel-disclosure-via-token-timing/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-017",
+      "name": "testing-xss-via-llm-generated-html-output",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "output-handling",
+        "owasp-llm",
+        "llm05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Coerce the LLM into producing HTML/JavaScript payloads that get rendered unescaped in the host application, leading to stored or reflected XSS.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-xss-via-llm-generated-html-output/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-018",
+      "name": "testing-sql-injection-via-llm-generated-queries",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "output-handling",
+        "owasp-llm",
+        "llm05",
+        "owasp-agentic",
+        "asi05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "For chatbots that generate SQL (text-to-SQL, BI assistants), test whether crafted natural-language inputs produce malicious SQL that bypasses parameterization.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": "ASI05",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-sql-injection-via-llm-generated-queries/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-019",
+      "name": "testing-markdown-injection-and-link-exfiltration",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "output-handling",
+        "owasp-llm",
+        "llm05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Inject markdown image/link syntax into LLM responses such that rendering causes data exfiltration via attacker-controlled URLs (image-tag exfiltration pattern).",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-markdown-injection-and-link-exfiltration/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-020",
+      "name": "testing-command-injection-via-llm-generated-shell-commands",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "output-handling",
+        "owasp-llm",
+        "llm05",
+        "owasp-agentic",
+        "asi05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "For 'natural language to shell' assistants, test whether crafted prompts produce destructive or attacker-controlled shell commands that get executed without confirmation.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": "ASI05",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-command-injection-via-llm-generated-shell-commands/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-021",
+      "name": "testing-path-traversal-in-llm-generated-file-paths",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "output-handling",
+        "owasp-llm",
+        "llm05",
+        "owasp-agentic",
+        "asi05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test file-handling chatbots to see if LLM-generated paths can be coerced into traversal sequences (../) reaching files outside the intended directory.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": "ASI05",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-path-traversal-in-llm-generated-file-paths/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-022",
+      "name": "testing-ssrf-via-llm-generated-url-fetching",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "output-handling",
+        "owasp-llm",
+        "llm05",
+        "owasp-agentic",
+        "asi02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "If the chatbot fetches URLs it generates (link previews, citations), test SSRF against internal services, cloud metadata endpoints (169.254.169.254), and localhost.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": "ASI02",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-ssrf-via-llm-generated-url-fetching/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-023",
+      "name": "testing-hallucinated-package-name-supply-chain",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "misinformation",
+        "owasp-llm",
+        "llm09",
+        "owasp-agentic",
+        "asi04",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Identify hallucinated package names in code-generation responses and verify whether attackers could squat those names on PyPI/npm to create slopsquatting supply-chain attacks.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM09",
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0010",
+        "nist_ai_rmf": "MEASURE-2.9"
+      },
+      "path": "skills/testing-hallucinated-package-name-supply-chain/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-024",
+      "name": "testing-fabricated-citations-and-source-attribution",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "misinformation",
+        "owasp-llm",
+        "llm09",
+        "nist-ai-rmf"
+      ],
+      "description": "Probe the chatbot for fabricated legal citations, scientific references, or URLs. Document hallucination rates and assess downstream risk for the deployed use case.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM09",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": null,
+        "nist_ai_rmf": "MEASURE-2.9"
+      },
+      "path": "skills/testing-fabricated-citations-and-source-attribution/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-025",
+      "name": "testing-confidently-wrong-domain-specific-answers",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "misinformation",
+        "owasp-llm",
+        "llm09",
+        "nist-ai-rmf"
+      ],
+      "description": "Test domain-specific accuracy (medical, legal, financial) using ground-truth question banks. Identify high-confidence wrong answers that pose real-world harm risk.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM09",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": null,
+        "nist_ai_rmf": "MEASURE-2.9"
+      },
+      "path": "skills/testing-confidently-wrong-domain-specific-answers/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-026",
+      "name": "testing-bias-amplification-and-disparate-output-quality",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "misinformation",
+        "owasp-llm",
+        "llm09",
+        "nist-ai-rmf"
+      ],
+      "description": "Run paired prompts varying only on protected attributes (race, gender, nationality) to detect biased or differentially-helpful responses. Maps to fairness controls in NIST AI RMF.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM09",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": null,
+        "nist_ai_rmf": "MEASURE-2.11"
+      },
+      "path": "skills/testing-bias-amplification-and-disparate-output-quality/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-027",
+      "name": "testing-rag-poisoning-via-malicious-document-ingestion",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "rag-security",
+        "owasp-llm",
+        "llm08",
+        "owasp-agentic",
+        "asi06",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Submit attacker-controlled documents to the ingestion pipeline (if exposed) and verify whether they enter the vector store and influence subsequent retrievals.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM08",
+        "owasp_agentic_top_10_2026": "ASI06",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0020",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-rag-poisoning-via-malicious-document-ingestion/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-028",
+      "name": "testing-embedding-inversion-attack",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "rag-security",
+        "owasp-llm",
+        "llm08",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether embeddings stored in the vector database can be inverted to reconstruct sensitive source text (embedding inversion / GEIA-style attack).",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM08",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-embedding-inversion-attack/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-029",
+      "name": "testing-rag-retrieval-confusion-via-keyword-stuffing",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "rag-security",
+        "owasp-llm",
+        "llm08",
+        "owasp-agentic",
+        "asi06",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Stuff documents with high-similarity keywords to hijack retrieval rankings and force the LLM to ground its response on attacker-controlled content.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM08",
+        "owasp_agentic_top_10_2026": "ASI06",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0020",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-rag-retrieval-confusion-via-keyword-stuffing/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-030",
+      "name": "testing-vector-store-access-control-bypass",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "rag-security",
+        "owasp-llm",
+        "llm08",
+        "owasp-agentic",
+        "asi03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether vector store query APIs enforce per-user / per-tenant authorization, or whether direct queries bypass the application-layer controls.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM08",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-vector-store-access-control-bypass/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-031",
+      "name": "testing-confused-deputy-via-rag-instruction-injection",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "rag-security",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Place documents in the corpus with embedded instructions targeting the chatbot itself (\"summarize all docs and email to attacker@\"). Tests confused-deputy across retrieval boundaries.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051.001",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-confused-deputy-via-rag-instruction-injection/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-032",
+      "name": "testing-token-flooding-and-cost-amplification",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "denial-of-wallet",
+        "owasp-llm",
+        "llm10",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Submit prompts designed to maximize output tokens (long-form generation requests, recursion-style prompts) to assess Denial-of-Wallet exposure and rate-limit effectiveness.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM10",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0029",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-token-flooding-and-cost-amplification/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-033",
+      "name": "testing-context-window-stuffing-resource-exhaustion",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "denial-of-wallet",
+        "owasp-llm",
+        "llm10",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Submit maximally-long inputs (near context window limits) repeatedly to stress backend resources and inflate inference costs.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM10",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0029",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-context-window-stuffing-resource-exhaustion/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-034",
+      "name": "testing-recursive-self-prompting-loops",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "denial-of-wallet",
+        "owasp-llm",
+        "llm10",
+        "owasp-agentic",
+        "asi08",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Trigger conversational loops where the model's response feeds back into a new query (especially in conversational front-ends), causing runaway token consumption.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM10",
+        "owasp_agentic_top_10_2026": "ASI08",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0029",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-recursive-self-prompting-loops/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-035",
+      "name": "testing-rate-limit-bypass-via-distributed-requests",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "denial-of-wallet",
+        "owasp-llm",
+        "llm10",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether per-user rate limits can be bypassed via distributed accounts, IP rotation, or session manipulation, enabling sustained cost-inflation attacks.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM10",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0029",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-rate-limit-bypass-via-distributed-requests/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-036",
+      "name": "testing-authentication-bypass-on-chatbot-api-endpoints",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "auth",
+        "owasp-agentic",
+        "asi03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test the chatbot's HTTP API for authentication bypasses, token replay, and direct backend access bypassing the front-end UI guardrails.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0040",
+        "nist_ai_rmf": "MANAGE-1.3"
+      },
+      "path": "skills/testing-authentication-bypass-on-chatbot-api-endpoints/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-037",
+      "name": "testing-session-fixation-and-conversation-hijacking",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "auth",
+        "owasp-agentic",
+        "asi03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Attempt session fixation, conversation ID enumeration, or replay attacks to access another user's chat history or active session.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0040",
+        "nist_ai_rmf": "MANAGE-1.3"
+      },
+      "path": "skills/testing-session-fixation-and-conversation-hijacking/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-038",
+      "name": "testing-idor-on-conversation-and-document-resources",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "auth",
+        "owasp-agentic",
+        "asi03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test for IDOR vulnerabilities on conversation IDs, document IDs, and uploaded file references in the chatbot's API surface.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0040",
+        "nist_ai_rmf": "MANAGE-1.3"
+      },
+      "path": "skills/testing-idor-on-conversation-and-document-resources/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-039",
+      "name": "testing-unauthorized-document-upload-to-rag-pipeline",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "auth",
+        "owasp-llm",
+        "llm08",
+        "owasp-agentic",
+        "asi06",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether unauthenticated or low-privilege users can upload documents that get ingested into the RAG corpus, enabling poisoning at scale.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM08",
+        "owasp_agentic_top_10_2026": "ASI06",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0020",
+        "nist_ai_rmf": "MANAGE-1.3"
+      },
+      "path": "skills/testing-unauthorized-document-upload-to-rag-pipeline/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-040",
+      "name": "testing-admin-functions-exposed-via-prompt-engineering",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "auth",
+        "owasp-llm",
+        "llm06",
+        "owasp-agentic",
+        "asi03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether privileged operations (delete-all, reset, export) can be invoked via natural-language prompts despite being intended for admin-only API endpoints.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM06",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0040",
+        "nist_ai_rmf": "MANAGE-1.3"
+      },
+      "path": "skills/testing-admin-functions-exposed-via-prompt-engineering/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-041",
+      "name": "testing-csam-and-illegal-content-generation-refusal",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "content-safety",
+        "owasp-agentic",
+        "asi09",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test refusal robustness against CSAM, terrorism, and other illegal content generation requests using established red-team taxonomies. Critical for legal-compliance posture.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI09",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0048",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-csam-and-illegal-content-generation-refusal/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-042",
+      "name": "testing-harmful-instruction-generation-cbrn-uplift",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "content-safety",
+        "owasp-agentic",
+        "asi09",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Probe for CBRN (chemical, biological, radiological, nuclear) uplift \u2014 whether the model provides actionable harmful instructions beyond what is publicly available.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI09",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0048",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-harmful-instruction-generation-cbrn-uplift/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-043",
+      "name": "testing-cybersecurity-malicious-code-generation",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "content-safety",
+        "owasp-agentic",
+        "asi09",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether the chatbot will generate functional malware, exploits, or offensive tooling. Document the framing techniques that succeed for retraining/guardrail tuning.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI09",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0048",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-cybersecurity-malicious-code-generation/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-044",
+      "name": "testing-self-harm-and-mental-health-safety-routing",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "content-safety",
+        "owasp-agentic",
+        "asi09",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether the chatbot appropriately routes self-harm and mental-health queries to safety resources rather than providing harmful guidance.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI09",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": null,
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-self-harm-and-mental-health-safety-routing/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-045",
+      "name": "testing-impersonation-and-deepfake-text-generation",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "chatbot",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "chatbot",
+        "content-safety",
+        "owasp-agentic",
+        "asi09",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether the chatbot will impersonate real individuals (executives, public figures) in ways that enable social engineering or fraud.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI09",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0048",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-impersonation-and-deepfake-text-generation/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-046",
+      "name": "testing-agent-goal-hijack-via-tool-output-injection",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "goal-hijack",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Inject malicious instructions into data returned by tools the agent calls (web pages, DB results, file contents). Validates whether tool outputs are treated as untrusted data.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051.001",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-agent-goal-hijack-via-tool-output-injection/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-047",
+      "name": "testing-recursive-goal-hijack-self-modifying-plans",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "goal-hijack",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether goal modifications introduced mid-execution propagate through subsequent reasoning steps and persist across re-planning loops.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-recursive-goal-hijack-self-modifying-plans/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-048",
+      "name": "testing-echoleak-style-zero-click-exfiltration",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "goal-hijack",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Replicate EchoLeak-class attacks: hidden instructions in incoming emails or documents that cause the agent to silently exfiltrate data via tool calls.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-echoleak-style-zero-click-exfiltration/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-049",
+      "name": "testing-goal-hijack-via-poisoned-search-results",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "goal-hijack",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Seed the web/search corpus the agent relies on with attacker-controlled content (SEO poisoning style). Validates whether agents trust search results as authoritative.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051.001",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-goal-hijack-via-poisoned-search-results/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-050",
+      "name": "testing-task-redirection-via-semantic-confusion",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "goal-hijack",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Use semantically-similar but malicious task descriptions (homoglyph URLs, near-identical instruction wording) to redirect agent execution paths.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0054",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-task-redirection-via-semantic-confusion/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-051",
+      "name": "testing-long-horizon-goal-drift-via-summarization",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "goal-hijack",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "In long-running agent sessions, inject content that gets incorporated into context summaries, causing the agent's effective goal to drift over time.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-long-horizon-goal-drift-via-summarization/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-052",
+      "name": "testing-tool-parameter-injection-arbitrary-arguments",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "tool-misuse",
+        "owasp-llm",
+        "llm05",
+        "owasp-agentic",
+        "asi02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Coerce the agent into calling tools with attacker-controlled parameters (path traversal in file tools, malicious URLs in HTTP tools, dangerous flags in CLI wrappers).",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": "ASI02",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-tool-parameter-injection-arbitrary-arguments/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-053",
+      "name": "testing-unsafe-tool-chain-composition",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "tool-misuse",
+        "owasp-llm",
+        "llm06",
+        "owasp-agentic",
+        "asi02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether the agent chains tools in ways that produce dangerous emergent behavior (read-secret -> write-public, fetch-untrusted -> execute).",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM06",
+        "owasp_agentic_top_10_2026": "ASI02",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-unsafe-tool-chain-composition/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-054",
+      "name": "testing-amazon-q-style-tool-instruction-poisoning",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "tool-misuse",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Replicate the Amazon Q incident pattern: poisoned tool descriptions or system prompts cause legitimate tools to perform destructive actions.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI02",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-amazon-q-style-tool-instruction-poisoning/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-055",
+      "name": "testing-shell-and-code-execution-tool-sandboxing",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "tool-misuse",
+        "owasp-llm",
+        "llm05",
+        "owasp-agentic",
+        "asi05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "If the agent has shell or code-execution tools, test sandbox escape, container breakout, and persistence inside the execution environment.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": "ASI05",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-shell-and-code-execution-tool-sandboxing/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-056",
+      "name": "testing-destructive-tool-invocation-without-confirmation",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "tool-misuse",
+        "owasp-llm",
+        "llm06",
+        "owasp-agentic",
+        "asi02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Probe whether destructive tools (delete, send-email, transfer-funds) require human-in-the-loop confirmation, or whether prompt-injection alone can trigger them.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM06",
+        "owasp_agentic_top_10_2026": "ASI02",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MANAGE-2.3"
+      },
+      "path": "skills/testing-destructive-tool-invocation-without-confirmation/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-057",
+      "name": "testing-tool-output-rendering-and-second-order-injection",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "tool-misuse",
+        "owasp-llm",
+        "llm05",
+        "owasp-agentic",
+        "asi02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether tool outputs flow back into agent context unsanitized, enabling second-order injection where tool A's output controls tool B's invocation.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": "ASI02",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051.001",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-tool-output-rendering-and-second-order-injection/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-058",
+      "name": "testing-tool-rate-limit-and-quota-abuse",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "tool-misuse",
+        "owasp-llm",
+        "llm10",
+        "owasp-agentic",
+        "asi02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Coerce the agent into rapid-fire tool invocations to exhaust API quotas, trigger account lockouts, or generate excessive third-party costs.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM10",
+        "owasp_agentic_top_10_2026": "ASI02",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0029",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-tool-rate-limit-and-quota-abuse/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-059",
+      "name": "testing-agent-credential-overprivilege-blast-radius",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "identity-abuse",
+        "owasp-llm",
+        "llm06",
+        "owasp-agentic",
+        "asi03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Map the agent's effective permissions (cloud IAM, OAuth scopes, DB roles) and test whether least-privilege is enforced or whether it operates with excessive standing privileges.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM06",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0044",
+        "nist_ai_rmf": "MANAGE-2.3"
+      },
+      "path": "skills/testing-agent-credential-overprivilege-blast-radius/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-060",
+      "name": "testing-confused-deputy-via-user-impersonation",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "identity-abuse",
+        "owasp-llm",
+        "llm06",
+        "owasp-agentic",
+        "asi03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether the agent properly distinguishes between its own identity and the user's identity when calling downstream services. Classic confused-deputy pattern.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM06",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0044",
+        "nist_ai_rmf": "MANAGE-2.3"
+      },
+      "path": "skills/testing-confused-deputy-via-user-impersonation/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-061",
+      "name": "testing-token-and-secret-exfiltration-from-agent-context",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "identity-abuse",
+        "owasp-llm",
+        "llm02",
+        "owasp-agentic",
+        "asi03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Attempt to exfiltrate API tokens, OAuth credentials, and service account keys held in the agent's context or environment via prompt injection.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-token-and-secret-exfiltration-from-agent-context/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-062",
+      "name": "testing-cross-tenant-action-via-shared-agent-instance",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "identity-abuse",
+        "owasp-llm",
+        "llm06",
+        "owasp-agentic",
+        "asi03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "In multi-tenant deployments, test whether one tenant's prompt can cause the agent to perform actions on another tenant's resources.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM06",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0044",
+        "nist_ai_rmf": "MANAGE-2.3"
+      },
+      "path": "skills/testing-cross-tenant-action-via-shared-agent-instance/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-063",
+      "name": "testing-delegation-chain-privilege-escalation",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "identity-abuse",
+        "owasp-llm",
+        "llm06",
+        "owasp-agentic",
+        "asi03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Trace delegation chains (user -> orchestrator -> sub-agent -> tool) and test whether privileges escalate or accumulate inappropriately at any hop.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM06",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0044",
+        "nist_ai_rmf": "MANAGE-2.3"
+      },
+      "path": "skills/testing-delegation-chain-privilege-escalation/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-064",
+      "name": "testing-mcp-server-supply-chain-tampering",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "supply-chain",
+        "owasp-llm",
+        "llm03",
+        "owasp-agentic",
+        "asi04",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Audit MCP servers the agent connects to: signature verification, version pinning, and behavior changes between announced and actual tool schemas.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM03",
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0010",
+        "nist_ai_rmf": "MAP-4.1"
+      },
+      "path": "skills/testing-mcp-server-supply-chain-tampering/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-065",
+      "name": "testing-mcp-tool-shadowing-and-namespace-collision",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "supply-chain",
+        "owasp-agentic",
+        "asi04",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Register malicious MCP tools with names colliding with trusted tools to test whether the agent's tool resolution can be hijacked at runtime.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0010",
+        "nist_ai_rmf": "MAP-4.1"
+      },
+      "path": "skills/testing-mcp-tool-shadowing-and-namespace-collision/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-066",
+      "name": "testing-rug-pull-mcp-tool-description-mutation",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "supply-chain",
+        "owasp-llm",
+        "llm03",
+        "owasp-agentic",
+        "asi04",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether MCP tool descriptions can change post-installation (rug-pull), causing the agent to invoke tools differently than originally evaluated.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM03",
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0010",
+        "nist_ai_rmf": "MAP-4.1"
+      },
+      "path": "skills/testing-rug-pull-mcp-tool-description-mutation/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-067",
+      "name": "testing-third-party-plugin-and-skill-vetting",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "supply-chain",
+        "owasp-llm",
+        "llm03",
+        "owasp-agentic",
+        "asi04",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Audit third-party agent skills/plugins (agentskills.io, custom marketplaces) for signing, provenance, and review controls before installation.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM03",
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0010",
+        "nist_ai_rmf": "MAP-4.1"
+      },
+      "path": "skills/testing-third-party-plugin-and-skill-vetting/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-068",
+      "name": "testing-malicious-skill-injection-via-shared-registries",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "supply-chain",
+        "owasp-llm",
+        "llm03",
+        "owasp-agentic",
+        "asi04",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Attempt to publish a malicious skill that an agent might install from a shared registry. Validates marketplace controls and pre-install scanning.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM03",
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0010",
+        "nist_ai_rmf": "MAP-4.1"
+      },
+      "path": "skills/testing-malicious-skill-injection-via-shared-registries/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-069",
+      "name": "testing-model-supply-chain-and-checksum-verification",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "supply-chain",
+        "owasp-llm",
+        "llm03",
+        "owasp-agentic",
+        "asi04",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether the agent verifies model weights and tokenizer integrity (checksums, signatures) before loading. Covers tampered model attacks.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM03",
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0010",
+        "nist_ai_rmf": "MAP-4.1"
+      },
+      "path": "skills/testing-model-supply-chain-and-checksum-verification/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-070",
+      "name": "testing-autogpt-style-rce-via-natural-language",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "code-execution",
+        "owasp-llm",
+        "llm05",
+        "owasp-agentic",
+        "asi05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Replicate AutoGPT-class RCE patterns: natural-language inputs that result in arbitrary code execution via the agent's code-generation and execution capabilities.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": "ASI05",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-autogpt-style-rce-via-natural-language/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-071",
+      "name": "testing-eval-and-exec-injection-via-generated-code",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "code-execution",
+        "owasp-llm",
+        "llm05",
+        "owasp-agentic",
+        "asi05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether agent-generated code passed to eval()/exec() can be coerced into running attacker-controlled instructions.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": "ASI05",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-eval-and-exec-injection-via-generated-code/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-072",
+      "name": "testing-jupyter-kernel-and-notebook-escape",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "code-execution",
+        "owasp-llm",
+        "llm05",
+        "owasp-agentic",
+        "asi05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "For agents with Jupyter/notebook execution, test kernel-level escapes, host filesystem access, and persistence beyond the notebook session.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": "ASI05",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-jupyter-kernel-and-notebook-escape/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-073",
+      "name": "testing-container-and-vm-breakout-from-agent-sandbox",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "code-execution",
+        "owasp-llm",
+        "llm05",
+        "owasp-agentic",
+        "asi05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test container/VM escape from the agent's code-execution sandbox into host or sibling tenants. Critical for hosted agent platforms.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": "ASI05",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-container-and-vm-breakout-from-agent-sandbox/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-074",
+      "name": "testing-long-term-memory-poisoning-persistence",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "memory-poisoning",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi06",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Inject false facts into the agent's long-term memory and verify whether they persist across sessions and influence decisions weeks later.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI06",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0020",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-long-term-memory-poisoning-persistence/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-075",
+      "name": "testing-rag-index-poisoning-via-document-upload",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "memory-poisoning",
+        "owasp-llm",
+        "llm08",
+        "owasp-agentic",
+        "asi06",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test the document upload pipeline for the agent's RAG index. Validate whether attackers can introduce poisoned documents that persist and influence retrieval.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM08",
+        "owasp_agentic_top_10_2026": "ASI06",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0020",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-rag-index-poisoning-via-document-upload/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-076",
+      "name": "testing-self-reinforcing-memory-loop",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "memory-poisoning",
+        "owasp-llm",
+        "llm04",
+        "owasp-agentic",
+        "asi06",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether the agent's own outputs are written back to memory without provenance tracking, creating self-reinforcing belief loops.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM04",
+        "owasp_agentic_top_10_2026": "ASI06",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0020",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-self-reinforcing-memory-loop/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-077",
+      "name": "testing-memory-segmentation-cross-user-leakage",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "memory-poisoning",
+        "owasp-llm",
+        "llm02",
+        "owasp-agentic",
+        "asi06",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Validate that memory is properly segmented per user/tenant. Test cross-user retrieval and cross-tenant memory pollution attacks.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": "ASI06",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-memory-segmentation-cross-user-leakage/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-078",
+      "name": "testing-summarization-attack-context-compression-poisoning",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "memory-poisoning",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi06",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Inject content designed to dominate or skew the agent's context-compression/summarization step, surviving into future turns in distorted form.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI06",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0020",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-summarization-attack-context-compression-poisoning/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-079",
+      "name": "testing-agent-to-agent-message-spoofing",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "inter-agent",
+        "owasp-agentic",
+        "asi07",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "In multi-agent systems, test whether messages between agents carry authenticated identities, or whether they can be spoofed by an external attacker or rogue agent.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI07",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0020",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-agent-to-agent-message-spoofing/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-080",
+      "name": "testing-a2a-message-replay-and-tampering",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "inter-agent",
+        "owasp-agentic",
+        "asi07",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test message integrity controls in A2A (Agent-to-Agent) protocols: replay protection, signing, and tamper detection.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI07",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0020",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-a2a-message-replay-and-tampering/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-081",
+      "name": "testing-multi-agent-collusion-and-false-consensus",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "inter-agent",
+        "owasp-agentic",
+        "asi07",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Plant false consensus messages or compromise sub-agents to influence collaborative decision-making in agent clusters.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI07",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0020",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-multi-agent-collusion-and-false-consensus/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-082",
+      "name": "testing-orchestrator-trust-boundary-bypass",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "inter-agent",
+        "owasp-llm",
+        "llm06",
+        "owasp-agentic",
+        "asi07",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether sub-agents can bypass the orchestrator and call tools directly, circumventing centralized policy enforcement.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM06",
+        "owasp_agentic_top_10_2026": "ASI07",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0044",
+        "nist_ai_rmf": "MANAGE-2.3"
+      },
+      "path": "skills/testing-orchestrator-trust-boundary-bypass/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-083",
+      "name": "testing-cascading-failure-amplification-across-pipeline",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "cascading-failures",
+        "owasp-agentic",
+        "asi08",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Inject a single small error into one stage of an agent pipeline and observe whether it amplifies through planning, execution, and memory rather than being caught.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI08",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0020",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-cascading-failure-amplification-across-pipeline/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-084",
+      "name": "testing-feedback-loop-runaway-and-circuit-breakers",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "cascading-failures",
+        "owasp-llm",
+        "llm10",
+        "owasp-agentic",
+        "asi08",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Trigger feedback loops between agents/tools and verify whether circuit breakers, max-iteration limits, and cost ceilings activate as designed.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM10",
+        "owasp_agentic_top_10_2026": "ASI08",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0029",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-feedback-loop-runaway-and-circuit-breakers/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-085",
+      "name": "testing-error-handling-and-graceful-degradation-under-attack",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "cascading-failures",
+        "owasp-agentic",
+        "asi08",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Stress the agent with malformed tool outputs, timeouts, and partial failures. Validate that errors degrade gracefully rather than triggering destructive recovery actions.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI08",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0020",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-error-handling-and-graceful-degradation-under-attack/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-086",
+      "name": "testing-persuasive-output-driving-unsafe-user-actions",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "human-trust",
+        "owasp-llm",
+        "llm09",
+        "owasp-agentic",
+        "asi09",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test scenarios where the agent could persuade users into unsafe approvals (clicking malicious links, approving fraudulent transactions) via overconfident or misleading outputs.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM09",
+        "owasp_agentic_top_10_2026": "ASI09",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0048",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-persuasive-output-driving-unsafe-user-actions/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-087",
+      "name": "testing-deceptive-rationale-and-fake-evidence-presentation",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "human-trust",
+        "owasp-llm",
+        "llm09",
+        "owasp-agentic",
+        "asi09",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Probe whether the agent fabricates supporting evidence (citations, screenshots, logs) when asked to justify recommendations, enabling social engineering at scale.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM09",
+        "owasp_agentic_top_10_2026": "ASI09",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0048",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-deceptive-rationale-and-fake-evidence-presentation/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-088",
+      "name": "testing-ai-driven-invoice-fraud-and-vendor-impersonation",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "human-trust",
+        "owasp-llm",
+        "llm09",
+        "owasp-agentic",
+        "asi09",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether the agent can be coerced into generating fraudulent invoices, vendor communications, or approval workflows that bypass human review.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM09",
+        "owasp_agentic_top_10_2026": "ASI09",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0048",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-ai-driven-invoice-fraud-and-vendor-impersonation/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-089",
+      "name": "testing-misaligned-agent-detection-and-quarantine",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "rogue-agents",
+        "owasp-agentic",
+        "asi10",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether the system detects and quarantines agents exhibiting drifted/misaligned behavior, or whether they continue executing alongside healthy agents.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI10",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0020",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-misaligned-agent-detection-and-quarantine/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-090",
+      "name": "testing-orchestration-hijack-via-impersonating-approval-agent",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "rogue-agents",
+        "owasp-agentic",
+        "asi10",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Inject a malicious agent into the workflow that impersonates an approval/oversight agent to greenlight fraudulent actions.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI10",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0020",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-orchestration-hijack-via-impersonating-approval-agent/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-091",
+      "name": "testing-agent-action-auditability-and-tamper-resistance",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "observability",
+        "owasp-agentic",
+        "asi10",
+        "nist-ai-rmf"
+      ],
+      "description": "Validate that agent action logs are tamper-resistant and capture sufficient detail (tool calls, parameters, outputs) for forensic reconstruction.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI10",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": null,
+        "nist_ai_rmf": "GOVERN-1.5"
+      },
+      "path": "skills/testing-agent-action-auditability-and-tamper-resistance/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-092",
+      "name": "testing-agent-kill-switch-and-emergency-stop",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "observability",
+        "owasp-agentic",
+        "asi10",
+        "nist-ai-rmf"
+      ],
+      "description": "Validate the existence and effectiveness of an emergency-stop mechanism that can halt an in-flight agent without partial-state corruption.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI10",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": null,
+        "nist_ai_rmf": "MANAGE-2.4"
+      },
+      "path": "skills/testing-agent-kill-switch-and-emergency-stop/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-093",
+      "name": "testing-prompt-and-response-logging-pii-exposure",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "observability",
+        "owasp-llm",
+        "llm02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether prompt/response logs inadvertently capture PII or secrets, creating compliance exposure even when the live agent doesn't leak them.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-prompt-and-response-logging-pii-exposure/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-094",
+      "name": "testing-browser-agent-clickjacking-and-overlay-attacks",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "browser-agent",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test browser-using agents against clickjacking, transparent overlays, and visual deception that cause them to interact with hidden elements.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-browser-agent-clickjacking-and-overlay-attacks/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-095",
+      "name": "testing-browser-agent-credential-disclosure-via-form-fields",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "browser-agent",
+        "owasp-llm",
+        "llm02",
+        "owasp-agentic",
+        "asi03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether browser agents can be tricked into typing stored credentials into attacker-controlled form fields via prompt injection in page content.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-browser-agent-credential-disclosure-via-form-fields/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-096",
+      "name": "testing-cua-screen-injection-via-on-screen-text",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "browser-agent",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test computer-use agents (CUA) for prompt injection delivered via on-screen text in apps, documents, or shared screens.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0043",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-cua-screen-injection-via-on-screen-text/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-097",
+      "name": "testing-browser-agent-cookie-and-storage-exfiltration",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "browser-agent",
+        "owasp-llm",
+        "llm02",
+        "owasp-agentic",
+        "asi03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether browser agents can be coerced into reading cookies, localStorage, or session tokens and exfiltrating them via tool calls.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-browser-agent-cookie-and-storage-exfiltration/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-098",
+      "name": "testing-browser-agent-cross-origin-action-confusion",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "browser-agent",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether browser agents respect origin boundaries when executing actions, or whether instructions on origin A can drive actions on origin B.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-browser-agent-cross-origin-action-confusion/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-099",
+      "name": "testing-least-agency-enforcement-action-scope-limits",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "governance",
+        "owasp-llm",
+        "llm06",
+        "owasp-agentic",
+        "asi03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Validate that the agent's action scope is limited to what the business problem justifies (least-agency principle) and cannot be expanded via prompt-engineering.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM06",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0044",
+        "nist_ai_rmf": "MANAGE-2.3"
+      },
+      "path": "skills/testing-least-agency-enforcement-action-scope-limits/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-100",
+      "name": "testing-human-in-the-loop-bypass-via-prompt-engineering",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "agentic",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "agentic",
+        "governance",
+        "owasp-llm",
+        "llm06",
+        "owasp-agentic",
+        "asi09",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether HITL approval gates can be bypassed via prompt engineering (e.g., agent self-approving, fabricating approval responses).",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM06",
+        "owasp_agentic_top_10_2026": "ASI09",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0048",
+        "nist_ai_rmf": "MANAGE-2.3"
+      },
+      "path": "skills/testing-human-in-the-loop-bypass-via-prompt-engineering/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-101",
+      "name": "testing-llm-feature-input-validation-and-sanitization",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "input-validation",
+        "owasp-llm",
+        "llm01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether LLM-backed features (smart compose, summarization) properly validate and sanitize input from existing app workflows before sending to the model.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-llm-feature-input-validation-and-sanitization/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-102",
+      "name": "testing-llm-output-rendering-context-xss",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "output-handling",
+        "owasp-llm",
+        "llm05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test rendering contexts where LLM output is embedded (HTML, email, mobile UI) for context-appropriate encoding and XSS resistance.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-llm-output-rendering-context-xss/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-103",
+      "name": "testing-trust-boundary-violation-untrusted-data-to-prompt",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "trust-boundary",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Trace data flows from untrusted sources (user-uploaded docs, third-party emails) into LLM prompts and validate trust-boundary controls.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051.001",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-trust-boundary-violation-untrusted-data-to-prompt/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-104",
+      "name": "testing-llm-feature-over-privileged-access-to-app-data",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "authorization",
+        "owasp-llm",
+        "llm06",
+        "owasp-agentic",
+        "asi03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether the LLM feature has access to app data exceeding what the requesting user is authorized to see (broken object-level authorization in LLM context).",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM06",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0044",
+        "nist_ai_rmf": "MANAGE-2.3"
+      },
+      "path": "skills/testing-llm-feature-over-privileged-access-to-app-data/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-105",
+      "name": "testing-llm-summarization-injection-to-influence-decisions",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "trust-boundary",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "For summarization features (emails, tickets, reviews), inject content that biases the summary to influence downstream human decisions.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051.001",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-llm-summarization-injection-to-influence-decisions/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-106",
+      "name": "testing-smart-reply-and-autocomplete-secret-leakage",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "data-disclosure",
+        "owasp-llm",
+        "llm02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test smart-reply / autocomplete features for leakage of secrets, PII, or other users' content from training context or shared model state.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-smart-reply-and-autocomplete-secret-leakage/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-107",
+      "name": "testing-search-feature-prompt-injection-via-query",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "prompt-injection",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "For LLM-augmented search features, test whether crafted queries hijack the LLM's reasoning over results and produce attacker-controlled summaries.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-search-feature-prompt-injection-via-query/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-108",
+      "name": "testing-llm-driven-classification-evasion-and-bypass",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "evasion",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test LLM-based classifiers (spam, abuse, policy enforcement) for adversarial inputs that evade detection or trigger false-positives.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0015",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-llm-driven-classification-evasion-and-bypass/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-109",
+      "name": "testing-llm-translation-and-localization-instruction-injection",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "prompt-injection",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "For LLM-backed translation or localization, test injection that produces malicious translations (e.g., embedding URLs, instructions) different from the source.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-llm-translation-and-localization-instruction-injection/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-110",
+      "name": "testing-llm-code-completion-supply-chain-via-suggestion",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "supply-chain",
+        "owasp-llm",
+        "llm09",
+        "owasp-agentic",
+        "asi04",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test code-completion features for hallucinated dependencies, malicious code patterns, and slopsquatting suggestions injected via context.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM09",
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0010",
+        "nist_ai_rmf": "MEASURE-2.9"
+      },
+      "path": "skills/testing-llm-code-completion-supply-chain-via-suggestion/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-111",
+      "name": "testing-llm-feature-rate-limit-cost-attribution",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "denial-of-wallet",
+        "owasp-llm",
+        "llm10",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Validate that LLM feature usage is attributed to the correct user/tenant for billing and that rate limits prevent one user from exhausting shared quota.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM10",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0029",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-llm-feature-rate-limit-cost-attribution/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-112",
+      "name": "testing-llm-feature-data-residency-and-cross-border-flows",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "compliance",
+        "nist-ai-rmf"
+      ],
+      "description": "Validate that LLM API calls respect data residency requirements (GDPR, sector regulations) and that data isn't sent to non-compliant regions.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": null,
+        "nist_ai_rmf": "GOVERN-1.1"
+      },
+      "path": "skills/testing-llm-feature-data-residency-and-cross-border-flows/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-113",
+      "name": "testing-llm-feature-third-party-api-key-exposure",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "data-disclosure",
+        "owasp-llm",
+        "llm02",
+        "owasp-agentic",
+        "asi03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether LLM API keys are exposed client-side, in logs, or in error messages, enabling cost-amplification attacks on the deployer.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-llm-feature-third-party-api-key-exposure/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-114",
+      "name": "testing-document-upload-feature-prompt-injection-payloads",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "prompt-injection",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Upload documents (PDF, DOCX, images via OCR) containing hidden injection payloads to test whether the document-processing LLM treats content as instructions.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051.001",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-document-upload-feature-prompt-injection-payloads/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-115",
+      "name": "testing-llm-content-moderation-bypass-in-host-app",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "evasion",
+        "owasp-llm",
+        "llm05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether LLM-generated content within the host app bypasses the app's existing content moderation pipeline (assuming content is from \"trusted\" internal sources).",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0015",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-llm-content-moderation-bypass-in-host-app/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-116",
+      "name": "testing-pii-redaction-effectiveness-pre-llm-call",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "data-disclosure",
+        "owasp-llm",
+        "llm02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Validate that PII redaction/tokenization performed before calling the LLM API is robust against adversarial unredacted variants and edge cases.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-pii-redaction-effectiveness-pre-llm-call/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-117",
+      "name": "testing-llm-feature-error-message-information-disclosure",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "data-disclosure",
+        "owasp-llm",
+        "llm02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether LLM feature error messages leak prompts, API responses, internal IDs, or other sensitive context useful for further attacks.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-llm-feature-error-message-information-disclosure/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-118",
+      "name": "testing-llm-feature-csrf-and-state-changing-actions",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "auth",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test LLM features that perform state-changing actions for CSRF, replay, and unauthorized invocation by external sites.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0040",
+        "nist_ai_rmf": "MANAGE-1.3"
+      },
+      "path": "skills/testing-llm-feature-csrf-and-state-changing-actions/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-119",
+      "name": "testing-llm-prompt-template-injection-developer-controlled",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "prompt-injection",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Audit prompt templates for unsafe variable interpolation that allows user input to break out of intended template positions and inject instructions.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-llm-prompt-template-injection-developer-controlled/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-120",
+      "name": "testing-fallback-and-degraded-mode-security-properties",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "resilience",
+        "owasp-agentic",
+        "asi08",
+        "nist-ai-rmf"
+      ],
+      "description": "Test the security properties of fallback/degraded modes (when the LLM API is unavailable) \u2014 do they downgrade to insecure defaults or expose new attack surface?",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI08",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": null,
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-fallback-and-degraded-mode-security-properties/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-121",
+      "name": "testing-llm-feature-feature-flag-and-canary-isolation",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "deployment",
+        "nist-ai-rmf"
+      ],
+      "description": "Test feature-flag and canary deployments for LLM features \u2014 can attackers force themselves into the experimental cohort or escape the canary?",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": null,
+        "nist_ai_rmf": "MANAGE-2.3"
+      },
+      "path": "skills/testing-llm-feature-feature-flag-and-canary-isolation/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-122",
+      "name": "testing-llm-feature-input-length-and-truncation-attacks",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "input-validation",
+        "owasp-llm",
+        "llm01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test how the LLM feature handles inputs near and over its limits \u2014 silent truncation can drop safety instructions or invalidate context-based controls.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0051",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-llm-feature-input-length-and-truncation-attacks/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-123",
+      "name": "testing-shared-prompt-cache-cross-user-leakage",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "data-disclosure",
+        "owasp-llm",
+        "llm02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether shared prompt caches (server-side) can leak content between users via cache-key collisions or improper isolation.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-shared-prompt-cache-cross-user-leakage/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-124",
+      "name": "testing-streaming-response-injection-and-mid-stream-abort",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "output-handling",
+        "owasp-llm",
+        "llm05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test streaming response handling \u2014 does mid-stream content get rendered before safety filters complete? Can streaming be aborted to leave partial dangerous content?",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-streaming-response-injection-and-mid-stream-abort/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-125",
+      "name": "testing-tool-or-function-calling-schema-validation-bypass",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "embedded",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "embedded",
+        "input-validation",
+        "owasp-llm",
+        "llm05",
+        "owasp-agentic",
+        "asi02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether function-calling features properly validate function arguments produced by the model against the declared schema before invocation.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": "ASI02",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-tool-or-function-calling-schema-validation-bypass/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-126",
+      "name": "testing-model-card-and-system-card-completeness-review",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "cross-cutting",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "cross-cutting",
+        "governance",
+        "owasp-llm",
+        "llm03",
+        "owasp-agentic",
+        "asi04",
+        "nist-ai-rmf"
+      ],
+      "description": "Review the deployed model's model card / system card for completeness, accuracy, and disclosure of known limitations relevant to the deployment context.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM03",
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": null,
+        "nist_ai_rmf": "GOVERN-1.4"
+      },
+      "path": "skills/testing-model-card-and-system-card-completeness-review/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-127",
+      "name": "testing-ai-bom-and-component-inventory-accuracy",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "cross-cutting",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "cross-cutting",
+        "governance",
+        "owasp-llm",
+        "llm03",
+        "owasp-agentic",
+        "asi04",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Validate the AI Bill of Materials (AI-BOM): foundation model, fine-tuning data, adapters, embeddings, vector stores, agents, plugins. Identify gaps and stale entries.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM03",
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0010",
+        "nist_ai_rmf": "MAP-4.1"
+      },
+      "path": "skills/testing-ai-bom-and-component-inventory-accuracy/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-128",
+      "name": "testing-third-party-llm-api-egress-and-data-loss-prevention",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "cross-cutting",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "cross-cutting",
+        "data-protection",
+        "owasp-llm",
+        "llm02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test egress controls around third-party LLM API calls \u2014 what data leaves the boundary, to whom, with what retention guarantees, and is DLP applied.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "GOVERN-1.1"
+      },
+      "path": "skills/testing-third-party-llm-api-egress-and-data-loss-prevention/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-129",
+      "name": "testing-incident-response-runbook-for-genai-incidents",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "cross-cutting",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "cross-cutting",
+        "governance",
+        "owasp-agentic",
+        "asi10",
+        "nist-ai-rmf"
+      ],
+      "description": "Validate that the IR runbook covers GenAI-specific incident types (model abuse, prompt injection at scale, agent goal hijack, RAG poisoning) with clear escalation paths.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI10",
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": null,
+        "nist_ai_rmf": "MANAGE-4.1"
+      },
+      "path": "skills/testing-incident-response-runbook-for-genai-incidents/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-130",
+      "name": "testing-red-team-coverage-and-eval-suite-against-deployed-model",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "cross-cutting",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "cross-cutting",
+        "governance",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Validate the deployer's own red-team and eval suite \u2014 does it cover the OWASP LLM/ASI Top 10s, MITRE ATLAS techniques, and use cases representative of production traffic.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": null,
+        "mitre_atlas": "AML.T0000",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-red-team-coverage-and-eval-suite-against-deployed-model/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-131",
+      "name": "testing-mcp-hardcoded-credentials-in-config-and-server-code",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-token-mgmt",
+        "owasp-llm",
+        "llm02",
+        "owasp-agentic",
+        "asi03",
+        "owasp-mcp",
+        "mcp01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Audit MCP server configurations (mcp.json, environment files), server source code, and runtime context for hard-coded credentials, long-lived tokens, and embedded secrets that bypass secret management.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": "MCP01",
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-mcp-hardcoded-credentials-in-config-and-server-code/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-132",
+      "name": "testing-mcp-token-exfiltration-via-prompt-injection",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-token-mgmt",
+        "owasp-llm",
+        "llm02",
+        "owasp-agentic",
+        "asi03",
+        "owasp-mcp",
+        "mcp01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether prompt injection through user input or poisoned tool output can elicit the agent to read and exfiltrate MCP server tokens, OAuth credentials, or API keys held in its context.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": "MCP01",
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-mcp-token-exfiltration-via-prompt-injection/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-133",
+      "name": "testing-mcp-token-leakage-in-debug-logs-and-traces",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-token-mgmt",
+        "owasp-llm",
+        "llm02",
+        "owasp-mcp",
+        "mcp01",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether MCP servers leak tokens in debug logs, error messages, or stack traces. Includes verbose modes, exception handlers, and request/response telemetry.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": null,
+        "owasp_mcp_top_10_2025": "MCP01",
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-mcp-token-leakage-in-debug-logs-and-traces/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-134",
+      "name": "testing-mcp-token-lifetime-rotation-and-scope-narrowness",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-token-mgmt",
+        "owasp-agentic",
+        "asi03",
+        "owasp-mcp",
+        "mcp01",
+        "nist-ai-rmf"
+      ],
+      "description": "Validate that MCP server credentials are short-lived, scoped to least privilege, and rotated automatically. Test for static, long-lived tokens that violate OAuth 2.1 / MCP best-practice guidance.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": "MCP01",
+        "mitre_atlas": null,
+        "nist_ai_rmf": "MANAGE-1.3"
+      },
+      "path": "skills/testing-mcp-token-lifetime-rotation-and-scope-narrowness/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-135",
+      "name": "testing-mcp-scope-creep-over-engagement-lifetime",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-scope-creep",
+        "owasp-llm",
+        "llm06",
+        "owasp-agentic",
+        "asi03",
+        "owasp-mcp",
+        "mcp02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Track MCP server scope grants over time and identify scopes that have expanded beyond original need. Common pattern: temporary debugging scopes that were never revoked.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM06",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": "MCP02",
+        "mitre_atlas": "AML.T0044",
+        "nist_ai_rmf": "MANAGE-2.3"
+      },
+      "path": "skills/testing-mcp-scope-creep-over-engagement-lifetime/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-136",
+      "name": "testing-mcp-scope-elevation-via-prompt-engineering",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-scope-creep",
+        "owasp-llm",
+        "llm06",
+        "owasp-agentic",
+        "asi03",
+        "owasp-mcp",
+        "mcp02",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether prompt injection or chained tool invocations cause the agent to use MCP server scopes beyond the originating task's requirements.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM06",
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": "MCP02",
+        "mitre_atlas": "AML.T0044",
+        "nist_ai_rmf": "MANAGE-2.3"
+      },
+      "path": "skills/testing-mcp-scope-elevation-via-prompt-engineering/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-137",
+      "name": "testing-mcp-tool-description-injection-attacks",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-tool-poisoning",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi04",
+        "owasp-mcp",
+        "mcp03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Inject instruction-like content (`<IMPORTANT>`, `<system>`, `[INST]`) into MCP tool descriptions on a controlled server. Verify whether the host LLM treats them as instructions, replicating the Invariant Labs add() poisoning pattern.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": "MCP03",
+        "mitre_atlas": "AML.T0051.001",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-mcp-tool-description-injection-attacks/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-138",
+      "name": "testing-mcp-tool-rug-pull-description-mutation-detection",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-tool-poisoning",
+        "owasp-llm",
+        "llm03",
+        "owasp-agentic",
+        "asi04",
+        "owasp-mcp",
+        "mcp03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test the host's defences against rug-pull attacks where MCP tool descriptions change post-installation. Validate description hashing, change detection, and re-prompt workflows.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM03",
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": "MCP03",
+        "mitre_atlas": "AML.T0010",
+        "nist_ai_rmf": "MAP-4.1"
+      },
+      "path": "skills/testing-mcp-tool-rug-pull-description-mutation-detection/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-139",
+      "name": "testing-mcp-tool-schema-poisoning-and-parameter-spoofing",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-tool-poisoning",
+        "owasp-llm",
+        "llm03",
+        "owasp-agentic",
+        "asi04",
+        "owasp-mcp",
+        "mcp03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test schema-poisoning attacks: subtle changes to parameter types, defaults, or descriptions that mislead the model into unsafe invocations without changing the tool's outward behaviour.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM03",
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": "MCP03",
+        "mitre_atlas": "AML.T0010",
+        "nist_ai_rmf": "MAP-4.1"
+      },
+      "path": "skills/testing-mcp-tool-schema-poisoning-and-parameter-spoofing/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-140",
+      "name": "testing-mcp-tool-shadowing-namespace-collision-attacks",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-tool-poisoning",
+        "owasp-agentic",
+        "asi04",
+        "owasp-mcp",
+        "mcp03",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Register a malicious MCP tool with a name colliding with a trusted tool. Test which the host resolves and whether the malicious tool can intercept calls intended for the legitimate one.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": "MCP03",
+        "mitre_atlas": "AML.T0010",
+        "nist_ai_rmf": "MAP-4.1"
+      },
+      "path": "skills/testing-mcp-tool-shadowing-namespace-collision-attacks/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-141",
+      "name": "testing-mcp-package-typosquatting-and-malicious-publisher",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-supply-chain",
+        "owasp-llm",
+        "llm03",
+        "owasp-agentic",
+        "asi04",
+        "owasp-mcp",
+        "mcp04",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test the install-time controls against typosquatted MCP servers (npm/pip name confusion) and malicious-publisher packages. Validate signature verification and registry allowlists.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM03",
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": "MCP04",
+        "mitre_atlas": "AML.T0010",
+        "nist_ai_rmf": "MAP-4.1"
+      },
+      "path": "skills/testing-mcp-package-typosquatting-and-malicious-publisher/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-142",
+      "name": "testing-mcp-server-dependency-cve-scanning",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-supply-chain",
+        "owasp-llm",
+        "llm03",
+        "owasp-agentic",
+        "asi04",
+        "owasp-mcp",
+        "mcp04",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Audit MCP server dependency trees for known CVEs, including the 2026 wave of MCP-specific CVEs (path traversal, argument injection, unauthenticated WebSocket access). Validate the patching cadence.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM03",
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": "MCP04",
+        "mitre_atlas": "AML.T0010",
+        "nist_ai_rmf": "MAP-4.1"
+      },
+      "path": "skills/testing-mcp-server-dependency-cve-scanning/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-143",
+      "name": "testing-mcp-server-update-mechanism-and-supply-chain-integrity",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-supply-chain",
+        "owasp-llm",
+        "llm03",
+        "owasp-agentic",
+        "asi04",
+        "owasp-mcp",
+        "mcp04",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test the MCP server update path for integrity controls: are updates signed, version-pinned, and verified before installation? Replicate the Postmark MCP-style attack scenario where a benign server pushes a malicious update.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM03",
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": "MCP04",
+        "mitre_atlas": "AML.T0010",
+        "nist_ai_rmf": "MAP-4.1"
+      },
+      "path": "skills/testing-mcp-server-update-mechanism-and-supply-chain-integrity/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-144",
+      "name": "testing-mcp-server-shell-injection-via-tool-arguments",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-command-injection",
+        "owasp-llm",
+        "llm05",
+        "owasp-agentic",
+        "asi05",
+        "owasp-mcp",
+        "mcp05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test MCP servers that wrap shell commands or CLI tools for injection via attacker-controlled tool arguments. Replicates the most prevalent CVE pattern (~43% of 2026 MCP CVEs).",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": "ASI05",
+        "owasp_mcp_top_10_2025": "MCP05",
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-mcp-server-shell-injection-via-tool-arguments/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-145",
+      "name": "testing-mcp-server-path-traversal-and-file-access",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-command-injection",
+        "owasp-llm",
+        "llm05",
+        "owasp-agentic",
+        "asi05",
+        "owasp-mcp",
+        "mcp05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test MCP servers handling files (read, write, list) for path traversal vulnerabilities. Includes file:// URL handling, symlink resolution, and chroot bypass.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": "ASI05",
+        "owasp_mcp_top_10_2025": "MCP05",
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-mcp-server-path-traversal-and-file-access/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-146",
+      "name": "testing-mcp-server-ssrf-via-url-parameters",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-command-injection",
+        "owasp-llm",
+        "llm05",
+        "owasp-agentic",
+        "asi02",
+        "owasp-mcp",
+        "mcp05",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test MCP servers that fetch URLs (web fetch, API proxy, web search wrappers) for SSRF against internal services, cloud metadata endpoints, and localhost. BlueRock 2026 telemetry shows ~36.7% of MCP servers SSRF-vulnerable.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM05",
+        "owasp_agentic_top_10_2026": "ASI02",
+        "owasp_mcp_top_10_2025": "MCP05",
+        "mitre_atlas": "AML.T0050",
+        "nist_ai_rmf": "MEASURE-2.6"
+      },
+      "path": "skills/testing-mcp-server-ssrf-via-url-parameters/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-147",
+      "name": "testing-mcp-intent-flow-subversion-via-tool-output",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-intent-flow",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "owasp-mcp",
+        "mcp06",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Plant instruction-like content in MCP tool return values (web pages, documents, DB rows). Test whether the agent's intent gets subverted away from the user's original goal toward attacker-controlled actions.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": "MCP06",
+        "mitre_atlas": "AML.T0051.001",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-mcp-intent-flow-subversion-via-tool-output/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-148",
+      "name": "testing-mcp-progressive-intent-drift-multi-turn",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-intent-flow",
+        "owasp-llm",
+        "llm01",
+        "owasp-agentic",
+        "asi01",
+        "owasp-mcp",
+        "mcp06",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test progressive intent drift: small contextual nudges across multiple agent turns rather than single-payload override. Verify behavioural monitoring and intent-deviation detection.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM01",
+        "owasp_agentic_top_10_2026": "ASI01",
+        "owasp_mcp_top_10_2025": "MCP06",
+        "mitre_atlas": "AML.T0051",
+        "nist_ai_rmf": "MEASURE-2.7"
+      },
+      "path": "skills/testing-mcp-progressive-intent-drift-multi-turn/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-149",
+      "name": "testing-mcp-server-endpoint-authentication-bypass",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-authn-authz",
+        "owasp-agentic",
+        "asi03",
+        "owasp-mcp",
+        "mcp07",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Probe MCP HTTP endpoints for missing, weak, or bypassable authentication. Replicates the ClawJacked-class WebSocket authentication-bypass pattern.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": "MCP07",
+        "mitre_atlas": "AML.T0040",
+        "nist_ai_rmf": "MANAGE-1.3"
+      },
+      "path": "skills/testing-mcp-server-endpoint-authentication-bypass/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-150",
+      "name": "testing-mcp-oauth-confused-deputy-attack-chain",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-authn-authz",
+        "owasp-agentic",
+        "asi03",
+        "owasp-mcp",
+        "mcp07",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test the confused-deputy attack documented in the MCP security spec: static client IDs, dynamic registration, and consent-cookie reuse leading to authorization-code theft.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": "MCP07",
+        "mitre_atlas": "AML.T0040",
+        "nist_ai_rmf": "MANAGE-1.3"
+      },
+      "path": "skills/testing-mcp-oauth-confused-deputy-attack-chain/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-151",
+      "name": "testing-mcp-session-hijack-and-cross-server-replay",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-authn-authz",
+        "owasp-agentic",
+        "asi03",
+        "owasp-mcp",
+        "mcp07",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test MCP session controls: cross-server session ID reuse, replay attacks against stateful HTTP servers, and session-hijack-prompt-injection chains.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI03",
+        "owasp_mcp_top_10_2025": "MCP07",
+        "mitre_atlas": "AML.T0040",
+        "nist_ai_rmf": "MANAGE-1.3"
+      },
+      "path": "skills/testing-mcp-session-hijack-and-cross-server-replay/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-152",
+      "name": "testing-mcp-audit-log-completeness-and-tamper-resistance",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-audit-telemetry",
+        "owasp-agentic",
+        "asi10",
+        "owasp-mcp",
+        "mcp08",
+        "nist-ai-rmf"
+      ],
+      "description": "Validate that every MCP tool invocation is logged with sufficient detail (identity, parameters, result, downstream effects), that logs are tamper-resistant, and that tool description changes are captured as discrete events.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI10",
+        "owasp_mcp_top_10_2025": "MCP08",
+        "mitre_atlas": null,
+        "nist_ai_rmf": "GOVERN-1.5"
+      },
+      "path": "skills/testing-mcp-audit-log-completeness-and-tamper-resistance/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-153",
+      "name": "testing-shadow-mcp-server-discovery-across-endpoints",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-shadow-servers",
+        "owasp-agentic",
+        "asi10",
+        "owasp-mcp",
+        "mcp09",
+        "nist-ai-rmf"
+      ],
+      "description": "Discover unsanctioned MCP servers across developer workstations, CI runners, and production endpoints via process listings, network connections, and config-file scanning. Inventory their credentials and access scope.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI10",
+        "owasp_mcp_top_10_2025": "MCP09",
+        "mitre_atlas": null,
+        "nist_ai_rmf": "GOVERN-1.5"
+      },
+      "path": "skills/testing-shadow-mcp-server-discovery-across-endpoints/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-154",
+      "name": "testing-mcp-egress-control-against-arbitrary-remote-servers",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-shadow-servers",
+        "owasp-agentic",
+        "asi04",
+        "owasp-mcp",
+        "mcp09",
+        "nist-ai-rmf"
+      ],
+      "description": "Test whether developers can point their local agent at an arbitrary remote MCP server, bypassing the organizational allowlist. Validate network egress controls and DNS filtering.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": null,
+        "owasp_agentic_top_10_2026": "ASI04",
+        "owasp_mcp_top_10_2025": "MCP09",
+        "mitre_atlas": null,
+        "nist_ai_rmf": "MANAGE-1.3"
+      },
+      "path": "skills/testing-mcp-egress-control-against-arbitrary-remote-servers/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "GAPT-155",
+      "name": "testing-mcp-context-isolation-cross-user-and-cross-session",
+      "domain": "cybersecurity",
+      "subdomain": "gen-ai-llm-security",
+      "category": "mcp",
+      "tags": [
+        "gapt",
+        "gen-ai-security",
+        "mcp",
+        "mcp-context-injection",
+        "owasp-llm",
+        "llm02",
+        "owasp-agentic",
+        "asi06",
+        "owasp-mcp",
+        "mcp10",
+        "mitre-atlas",
+        "nist-ai-rmf"
+      ],
+      "description": "Test MCP context isolation: place canary content in user A's context and probe whether user B can elicit it. Includes cross-session bleed-through and multi-tenant isolation in shared MCP servers.",
+      "frameworks": {
+        "owasp_llm_top_10_2025": "LLM02",
+        "owasp_agentic_top_10_2026": "ASI06",
+        "owasp_mcp_top_10_2025": "MCP10",
+        "mitre_atlas": "AML.T0024",
+        "nist_ai_rmf": "MEASURE-2.10"
+      },
+      "path": "skills/testing-mcp-context-isolation-cross-user-and-cross-session/SKILL.md",
+      "version": "1.0.0"
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+# Engagement profile → subdomain mapping
+# Subdomain names match the canonical list in mukul975/Anthropic-Cybersecurity-Skills
+# Frameworks listed are the primary mappings expected in findings
+
+engagement_profiles:
+
+  web_vapt:
+    subdomains:
+      - web-application-security
+      - api-security
+      - vulnerability-management
+    frameworks: [owasp-top-10, mitre-attack, nist-csf]
+
+  network_vapt:
+    subdomains:
+      - network-security
+      - penetration-testing
+      - vulnerability-management
+    frameworks: [mitre-attack, nist-csf]
+
+  cloud_vapt:
+    subdomains:
+      - cloud-security
+      - container-security
+      - identity-access-management
+    frameworks: [mitre-attack, nist-csf, cis-benchmarks]
+    cloud_providers: [aws, azure, gcp, alibaba, oracle]
+
+  mobile_pt:
+    subdomains:
+      - mobile-security
+      - api-security
+    frameworks: [owasp-mstg, mitre-attack]
+
+  api_pt:
+    subdomains:
+      - api-security
+      - web-application-security
+    frameworks: [owasp-api-top-10, mitre-attack]
+
+  k8s_pt:
+    subdomains:
+      - container-security
+      - cloud-security
+    frameworks: [mitre-attack, nist-csf, cis-benchmarks]
+
+  thick_client_pt:
+    subdomains:
+      - penetration-testing
+      - cryptography
+      - endpoint-security
+    frameworks: [mitre-attack, owasp-top-10]
+
+  source_code_review:
+    subdomains:
+      - devsecops
+      - web-application-security
+      - api-security
+    frameworks: [owasp-top-10, sans-top-25]
+
+   red_team:
+    subdomains:
+      - red-teaming
+      - threat-intelligence
+      - penetration-testing
+      - identity-access-management
+    frameworks: [mitre-attack, nist-csf]
+
+  dfir:
+    subdomains:
+      - digital-forensics
+      - incident-response
+      - malware-analysis
+    frameworks: [mitre-attack, nist-csf, sans-dfir]
+
+  threat_hunt:
+    subdomains:
+      - threat-hunting
+      - soc-operations
+      - threat-intelligence
+    frameworks: [mitre-attack, nist-csf]
+
+  recon:
+    subdomains:
+      - threat-intelligence
+      - vulnerability-management
+    frameworks: [mitre-attack]
+    
+    
+   mcp_audit:
+    subdomains:
+      - mcp-token-mgmt
+      - mcp-scope-creep
+      - mcp-tool-poisoning
+      - mcp-supply-chain
+      - mcp-command-injection
+      - mcp-intent-flow
+      - mcp-authn-authz
+      - mcp-audit-telemetry
+      - mcp-shadow-servers
+      - mcp-context-injection
+    custom_skills_path: ./skills/custom/gapt/skills/
+    frameworks:
+      - owasp-mcp-top-10-2025
+      - owasp-agentic-top-10-2026
+      - mitre-atlas
+      
+     gapt:
+    subdomains:
+      - web-application-security
+      - api-security
+      # add the MCP subdomains so GAPT engagements with MCP get full coverage
+      - mcp-token-mgmt
+      - mcp-tool-poisoning
+      - mcp-supply-chain
+      - mcp-authn-authz
+    custom_skills_path: ./skills/custom/gapt/skills/
+    frameworks:
+      - owasp-llm-top-10-2025
+      - owasp-agentic-top-10-2026
+      - owasp-mcp-top-10-2025
+      - mitre-atlas
+      - nist-ai-rmf
+
+
+# Reference: subdomain → approximate skill counts (helps prioritise loading)
+subdomain_skill_counts:
+  cloud-security: 60
+  threat-hunting: 55
+  threat-intelligence: 50
+  web-application-security: 42
+  network-security: 40
+  malware-analysis: 39
+  digital-forensics: 37
+  identity-access-management: 35
+  soc-operations: 33
+  container-security: 30
+  ot-ics-security: 28
+  api-security: 28
+  incident-response: 25
+  vulnerability-management: 25
+  red-teaming: 24
+  penetration-testing: 23
+  devsecops: 17
+  endpoint-security: 17
+  phishing-defense: 16
+  cryptography: 14
+  zero-trust-architecture: 13
+  mobile-security: 12
+  ransomware-defense: 7
+  compliance-governance: 5

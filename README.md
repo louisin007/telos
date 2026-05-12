@@ -36,7 +36,7 @@ Each command produces a timestamped markdown artifact in `./output/`.
 
 ## Skill Library
 
-- **754 open-source cybersecurity skills** — 26 subdomains covering web, network, cloud, mobile, K8s, DFIR, threat hunting, and more
+- **754 open-source cybersecurity skills** — 26 subdomains covering web, network, cloud, mobile, K8S, DFIR, threat hunting, and more
 - **155 custom GAPT skills** — mapped to OWASP LLM Top 10 (2025), OWASP Agentic Top 10 (2026), OWASP MCP Top 10 (2025), MITRE ATLAS, and NIST AI RMF
 
 ## Engagement Types
